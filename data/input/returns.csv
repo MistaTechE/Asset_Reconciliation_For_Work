@@ -1,2 +1,11 @@
-#returns.csv
-#stand in for _Computer Check Out V5 (25-26) (Responses) - Returns - Ref.csv
+Timestamp	Email Address	First Name	Last Name	Student or Staff ID Number	Grade	Kind?	State Tag Chromebook	Billed? CB	If no, explanation CB	Does the Student have another device?	State Tag iPad	Is the subject being billed?  IP	If no, explanation IP	Does the Student have another device?	State Tag MB	Is the subject being billed?  MB	If no, explanation MB	Does the Student have another device?	Which Device?	State Tag Mifi	Is the subject being billed?  Mifi	If no, explanation Mifi	Does the Student have another device?
+5/28/2026 11:11:34	ct@wis.k12.hi.us	C	Thomas	2000111000	8th	Macbook Air									E27300000	No	Returned laptop and charger and Adapter	No								
+5/28/2026 11:11:40	ct@wis.k12.hi.us	A	Smith	2000111001	7th	Chromebook	E27310000	No	No damage, $69 bill for no charger	No									
+5/28/2026 11:12:02	js@wis.k12.hi.us	John	Smith	2000111002	9th	Chromebook	E27310001	No	Returned in good condition	No									
+5/28/2026 11:12:18	al@wis.k12.hi.us	Alice	Lee	2000111003	10th	Macbook Air									E27300001	No	Normal return	No								
+5/28/2026 11:12:33	bj@wis.k12.hi.us	Brandon	Johnson	2000111004	11th	Chromebook	E27310002	No	Returned during advisory	No									
+5/28/2026 11:12:49	cd@wis.k12.hi.us	Chloe	Davis	2000111005	12th	Macbook Air									E27300002	No	Minor scratches noted	No								
+5/28/2026 11:13:05	dg@wis.k12.hi.us	Diego	Garcia	2000111006	8th	Chromebook	E27310003	No	Returned at office	No									
+5/28/2026 11:13:22	em@wis.k12.hi.us	Emma	Martin	2000111007	9th	Macbook Air									E27300003	No	Returned with charger	No								
+5/28/2026 11:13:40	fw@wis.k12.hi.us	Faith	Wilson	2000111008	10th	Chromebook	E27310004	No	Drop-off return	No									
+5/28/2026 11:13:58	gb@wis.k12.hi.us	Gavin	Brown	2000111009	11th	Macbook Air									E27300004	No	Returned after class	No													
