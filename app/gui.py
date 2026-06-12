@@ -35,11 +35,17 @@ def generate_report():
 
 def run_app():
     root = Tk()
+    root.geometry("500x300")
+    root.configure(bg="#b2f5ea")
 
     Button(
         root,
         text="Generate Call List",
-        command=generate_report
+        command=generate_report,
+        bg="#2dd4bf",      # teal button
+        fg="black",
+        padx=10,
+        pady=10
     ).pack(padx=20, pady=20)
 
     root.mainloop()
