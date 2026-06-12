@@ -1,8 +1,7 @@
 #gui.py
-from tkinter import Tk, Button
+from tkinter import Tk, Button, messagebox
 from app.csv_loader import load_checkouts, load_replacements, load_returns
 from app.reconciler import reconcile
-from tkinter import messagebox
 
 
 def generate_report():
@@ -24,6 +23,6 @@ def run_app():
         root,
         text="Generate Call List",
         command=generate_report
-    ).pack()
+    ).pack(padx=20, pady=20)
 
     root.mainloop()
