@@ -49,14 +49,21 @@ def run_app():
     center_window(root, 500, 300)
     root.configure(bg="#b2f5ea")
 
-    Button(
+    button = Button(
         root,
         text="Generate Call List",
         command=lambda: generate_report(root),
         bg="#2dd4bf",      # teal button
         fg="black",
-        padx=10,
-        pady=10
-    ).pack(expand=True)
+        padx=20,
+        pady=10,
+        relief="raised",
+        borderwidth=3
+    )
+    
+    button.pack(expand=True)
+
+    button.bind("<Enter>", lambda e: button.config(bg="#14b8a6"))
+    button.bind("<Leave>", lambda e: button.config(bg="#2dd4bf"))
 
     root.mainloop()
