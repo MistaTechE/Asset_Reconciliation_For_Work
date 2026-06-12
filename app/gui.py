@@ -6,14 +6,17 @@ import pandas as pd
 
 
 def generate_report():
+    messagebox.showinfo("Step 1", "Select CHECKOUTS CSV")
     checkouts_path = filedialog.askopenfilename(
         title="Select Checkouts CSV"
     )
-
+    
+    messagebox.showinfo("Step 2", "Select REPLACEMENTS CSV")
     replacements_path = filedialog.askopenfilename(
         title="Select Replacements CSV"
     )
 
+    messagebox.showinfo("Step 3", "Select RETURNS CSV")
     returns_path = filedialog.askopenfilename(
         title="Select Returns CSV"
     )
@@ -35,6 +38,7 @@ def generate_report():
 
 def run_app():
     root = Tk()
+    root.title("Asset Reconciliation Tool")
     root.geometry("500x300")
     root.configure(bg="#b2f5ea")
 
