@@ -5,7 +5,7 @@ from app.reconciler import reconcile
 import pandas as pd
 
 
-def generate_report():
+def generate_report(root):
     messagebox.showinfo("Step 1", "Select CHECKOUTS CSV")
     checkouts_path = filedialog.askopenfilename(
         title="Select Checkouts CSV"
@@ -34,7 +34,7 @@ def generate_report():
     result.to_csv("data/output/students_to_call.csv", index=False)
     
     messagebox.showinfo("Success", "Call list generated successfully!")
-
+    root.destroy()
 
 def run_app():
     root = Tk()
@@ -45,7 +45,7 @@ def run_app():
     Button(
         root,
         text="Generate Call List",
-        command=generate_report,
+        command=lambda: generate_report(root),
         bg="#2dd4bf",      # teal button
         fg="black",
         padx=10,
