@@ -12,22 +12,32 @@ def build_current_assignments(checkouts_df: pd.DataFrame,
     # Base assignments from checkouts
     current = checkouts_df[[
         "State ID Number",
-        "State Tag"
+        "State Tag Number"
     ]].copy()
 
     current = current.rename(columns={
         "State Tag": "Current State Tag"
     })
-
-    # Apply replacements (overwrite device per student)
+                                
+    # Apply replacements (overwrite device per student)                                
     replacements_clean = replacements_df[[
-        "State ID Number",
-        "Replace Tag"
+      "State ID Number",
+      "Replace Tag",
+      "State Tag MB",
+      "State Tag Media"
+    ]].copy()
+                                
+    replacements_clean["Current State Tag"] = (
+      replacements_clean["Replace Tag"]
+      .fillna(replacements_clean["State Tag MB"])
+      .fillna(replacements_clean["State Tag Media"])
+    )
+
+    replacements_clean = replacements_clean[[
+      "State ID Number",
+      "Current State Tag"
     ]].dropna()
 
-    replacements_clean = replacements_clean.rename(columns={
-        "Replace Tag": "Current State Tag"
-    })
 
     # Combine + keep latest (replacement wins automatically)
     combined = pd.concat([current, replacements_clean], ignore_index=True)
@@ -44,17 +54,17 @@ def build_current_assignments(checkouts_df: pd.DataFrame,
 def remove_returned_devices(assignments_df: pd.DataFrame,
                             returns_df: pd.DataFrame) -> pd.DataFrame:
     """
-    Removes any device that appears in returns list.
+    Removes any Chromebook or MacBook that appears in the returns list.
     """
 
-    returned_tags = set(returns_df["State Tag"].dropna())
+    returned_tags = set(returns_df["State Tag Chromebook"].dropna())
 
-    filtered = assignments_df[
-        ~assignments_df["Current State Tag"].isin(returned_tags)
-    ].copy()
+    returned_tags.update(returns_df["State Tag MB"].dropna())
+
+    filtered = assignments_df[~assignments_df["Current State Tag"].isin(returned_tags)].copy()
 
     return filtered
-
+                              
 
 def build_call_list(final_df: pd.DataFrame,
                     checkouts_df: pd.DataFrame) -> pd.DataFrame:
