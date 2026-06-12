@@ -1,6 +1,5 @@
 #gui.py
 from tkinter import Tk, Button, messagebox, filedialog
-from app.csv_loader import load_checkouts, load_replacements, load_returns
 from app.reconciler import reconcile
 import pandas as pd
 
