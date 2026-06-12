@@ -37,9 +37,16 @@ def generate_report(root):
     root.destroy()
 
 def run_app():
+    def center_window(root, width=500, height=300):
+        screen_width = root.winfo_screenwidth()
+        screen_height = root.winfo_screenheight()
+        x = (screen_width // 2) - (width // 2)
+        y = (screen_height // 2) - (height // 2)
+        root.geometry(f"{width}x{height}+{x}+{y}")
+    
     root = Tk()
     root.title("Asset Reconciliation Tool")
-    root.geometry("500x300")
+    center_window(root, 500, 300)
     root.configure(bg="#b2f5ea")
 
     Button(
@@ -50,6 +57,6 @@ def run_app():
         fg="black",
         padx=10,
         pady=10
-    ).pack(padx=20, pady=20)
+    ).pack(expand=True)
 
     root.mainloop()
