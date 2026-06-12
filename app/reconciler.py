@@ -16,7 +16,7 @@ def build_current_assignments(checkouts_df: pd.DataFrame,
     ]].copy()
 
     current = current.rename(columns={
-        "State Tag": "Current State Tag"
+        "State Tag Number": "Current State Tag"
     })
                                 
     # Apply replacements (overwrite device per student)                                
