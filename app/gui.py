@@ -2,6 +2,7 @@
 from tkinter import Tk, Button, messagebox, filedialog
 from app.reconciler import reconcile
 import pandas as pd
+from pathlib import Path
 
 
 def generate_report(root):
@@ -30,7 +31,9 @@ def generate_report(root):
 
     result = reconcile(checkouts, replacements, returns)
 
-    result.to_csv("data/output/students_to_call.csv", index=False)
+    desktop = Path.home() / "Desktop"
+
+    result.to_csv(desktop / "students_to_call.csv", index=False)
     
     messagebox.showinfo("Success", "Call list generated successfully!")
     root.destroy()
